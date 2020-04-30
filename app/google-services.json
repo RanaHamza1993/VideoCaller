@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "134267214836",
+    "firebase_url": "https://videocaller-5d151.firebaseio.com",
+    "project_id": "videocaller-5d151",
+    "storage_bucket": "videocaller-5d151.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:134267214836:android:f7ee66c7468e1cf1b377a1",
+        "android_client_info": {
+          "package_name": "com.havelisolutions.videocaller"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "134267214836-0q5ktfl4iiembd7ep22l4m0dm6u79icc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3BoK8fqRqZFZ-hqsPYrDO84MGWI4-tD4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "134267214836-0q5ktfl4iiembd7ep22l4m0dm6u79icc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
