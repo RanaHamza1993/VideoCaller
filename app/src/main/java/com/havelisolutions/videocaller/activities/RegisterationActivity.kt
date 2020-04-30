@@ -36,6 +36,13 @@ class RegisterationActivity : AppCompatActivity() {
         setListeners()
     }
 
+    override fun onStart() {
+        super.onStart()
+        val user=FirebaseAuth.getInstance().currentUser
+        user?.let {
+            ActivityNavigator<MainActivity>(this,MainActivity::class.java)
+        }
+    }
     private fun init() {
 
         callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
