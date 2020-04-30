@@ -47,7 +47,7 @@ class RegisterationActivity : AppCompatActivity() {
                 showErrorMessage(p0.message.toString())
                 binding.run {
                     phoneAuth.show()
-                    phoneText.hide()
+                    codeText.show()
                     progressBar.hide()
                 }
 
@@ -61,7 +61,7 @@ class RegisterationActivity : AppCompatActivity() {
                 checker="Code Sent"
                 binding.run {
                     continueNextButton.text="Submit"
-                    phoneText.show()
+                    codeText.show()
                     progressBar.hide()
                 }
                 showInfoMessage("Code has been sent please check and write")
@@ -84,29 +84,33 @@ class RegisterationActivity : AppCompatActivity() {
     private fun setListeners() {
         binding.run {
             ccp.registerCarrierNumberEditText(binding.phoneText)
-            if (continueNextButton.text.equals("Submit") || checker.equals("Code Sent")) {
-                if(phoneText.text.toString().isEmpty()){
-                    showErrorMessage("Please write phone number")
-                }else{
-                    showHideProgressBar(binding.progressBar)
-                    signInWithPhoneAuthCredential(PhoneAuthProvider.getCredential(mVerificationId,phoneText.text.toString()))
-                }
-            } else {
-                phoneNumber = ccp.fullNumberWithPlus
-                phoneNumber.let {
-                    if (it.equals("")) {
-                        showHideProgressBar(progressBar)
-                        PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                            phoneNumber, // Phone number to verify
-                            60, // Timeout duration
-                            TimeUnit.SECONDS, // Unit of timeout
-                            this@RegisterationActivity, // Activity (for callback binding)
-                            callbacks
-                        ) // OnVerificationStateChangedCallbacks
-                    } else
-                        showInfoMessage("Please write valid phone number")
+            continueNextButton.setOnClickListener {
+
+                if (continueNextButton.text.equals("Submit") || checker.equals("Code Sent")) {
+                    if(phoneText.text.toString().isEmpty()){
+                        showErrorMessage("Please write phone number")
+                    }else{
+                        showHideProgressBar(binding.progressBar)
+                        signInWithPhoneAuthCredential(PhoneAuthProvider.getCredential(mVerificationId,phoneText.text.toString()))
+                    }
+                } else {
+                    phoneNumber = ccp.fullNumberWithPlus
+                    phoneNumber.let {
+                        if (!it.equals("")) {
+                            showHideProgressBar(progressBar)
+                            PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                                phoneNumber, // Phone number to verify
+                                60, // Timeout duration
+                                TimeUnit.SECONDS, // Unit of timeout
+                                this@RegisterationActivity, // Activity (for callback binding)
+                                callbacks
+                            ) // OnVerificationStateChangedCallbacks
+                        } else
+                            showInfoMessage("Please write valid phone number")
+                    }
                 }
             }
+
         }
     }
 
