@@ -12,6 +12,15 @@
     tools:context=".activities.RegisterationActivity">
 
 
+    <ProgressBar
+        android:layout_width="@dimen/_24sdp"
+        android:layout_gravity="center"
+        android:layout_height="@dimen/_24sdp"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:id="@+id/progress_bar"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:elevation="2dp"/>
     <TextView
         android:id="@+id/textview1"
         android:layout_width="match_parent"

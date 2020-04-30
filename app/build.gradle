@@ -62,4 +62,7 @@ dependencies {
     implementation 'com.hbb20:ccp:2.3.8'
     // For developers using AndroidX in their applications
     implementation 'pub.devrel:easypermissions:3.0.0'
+
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
 }
