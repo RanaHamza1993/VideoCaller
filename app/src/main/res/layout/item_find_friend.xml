@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_margin="@dimen/_12sdp"
+                android:id="@+id/image_notification"
+                android:layout_width="@dimen/_280sdp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/profile_image"
+                android:layout_height="@dimen/_280sdp"/>
+
+            <TextView
+                android:id="@+id/name_notification"
+                android:layout_below="@id/image_notification"
+                android:layout_margin="@dimen/_12sdp"
+                android:text="User Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/accept_request_btn"
+                android:layout_width="match_parent"
+                android:layout_margin="@dimen/_12sdp"
+                android:layout_below="@id/name_notification"
+                android:text="Accept Request"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:background="@color/colorPrimary"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/decline_request_btn"
+                android:layout_width="match_parent"
+                android:layout_margin="@dimen/_12sdp"
+                android:layout_below="@id/accept_request_btn"
+                android:text="Cancel Request"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:background="@color/colorPrimary"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

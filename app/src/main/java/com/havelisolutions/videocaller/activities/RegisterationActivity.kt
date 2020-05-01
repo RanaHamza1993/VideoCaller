@@ -14,7 +14,6 @@ import com.havelisolutions.videocaller.R
 import com.havelisolutions.videocaller.databinding.RegisterationBinding
 import com.havelisolutions.videocaller.extensions.*
 import com.havelisolutions.videocaller.utils.ActivityNavigator
-import java.security.AuthProvider
 import java.util.concurrent.TimeUnit
 
 class RegisterationActivity : AppCompatActivity() {
@@ -40,7 +39,7 @@ class RegisterationActivity : AppCompatActivity() {
         super.onStart()
         val user=FirebaseAuth.getInstance().currentUser
         user?.let {
-            ActivityNavigator<MainActivity>(this,MainActivity::class.java)
+            ActivityNavigator<ContactsActivity>(this,ContactsActivity::class.java)
         }
     }
     private fun init() {
@@ -129,7 +128,7 @@ class RegisterationActivity : AppCompatActivity() {
                     Log.d(TAG, "signInWithCredential:success")
                     showHideProgressBar(binding.progressBar)
                     showSuccessMessage("Congos you are logged in")
-                    ActivityNavigator<MainActivity>(this,MainActivity::class.java)
+                    ActivityNavigator<ContactsActivity>(this,ContactsActivity::class.java)
                     val user = task.result?.user
                     // ...
                 } else {
