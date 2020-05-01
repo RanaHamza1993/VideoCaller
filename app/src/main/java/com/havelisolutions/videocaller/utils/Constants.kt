@@ -1,5 +1,8 @@
 package com.havelisolutions.videocaller.utils
 
+import android.widget.ImageView
+import com.bumptech.glide.Glide
+
 object Constants {
     object keys{
         val key="key"
@@ -16,5 +19,11 @@ object Constants {
         val TITLE="title"
         val MESSAGE="message"
         val DATA="data"
+    }
+    fun loadImage(view: ImageView, url:String?){
+        Glide.with(view)
+            .setDefaultRequestOptions(provideRequestOptions())
+            .load(url)
+            .into(view)
     }
 }
